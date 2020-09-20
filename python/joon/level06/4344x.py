@@ -15,25 +15,16 @@ for line in A:
     sum += target
   average = sum / num_of_students
 
-  # Work on printing the asked result
+  # Count above average students
   above_average_std_count = 0
   for val in line:
     if val > average:
       above_average_std_count += 1
 
-  # Print accordingly
+  # Get the rate
   the_percent = round(above_average_std_count / num_of_students * 100, 3) # 40, 57.143  62.5
   
-  # Pinrt decimal
-  print(f"{int(the_percent)}.", end="")
-  
-  # Print Digit
-  the_rest = int(round(int(the_percent % 1 * 10000), -1) / 10)
-  print(f"{the_rest}", end="")
-
-  # Print the rest
-  zeros_required =  3 - len(str(the_rest))
-  print('0' * zeros_required, end="")
-  print('%')
+  #print
+  print("{:.3f}%".format(round(the_percent, 3)))
   
   
