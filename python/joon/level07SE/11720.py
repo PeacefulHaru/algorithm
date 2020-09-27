@@ -7,4 +7,5 @@ sum = 0
 for val in second_line:
   sum += int(val)
 
+
 print(sum)
