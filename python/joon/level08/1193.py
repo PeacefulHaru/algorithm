@@ -1,36 +1,29 @@
-# X = int(input())
+X = int(input()) #3
 
 def solution(X):
-  row = 1
-  a = 1
-  b = 1
-  count = 1
-
-  # handle 1 exception
-  if X == 1:
-    print('1/1')
-    exit()
-
+  max_elements = 1
+  adding_elements = 2
   while True:
-    row += 1
-    isEvenRow = row % 2 == 0
-    if isEvenRow: a += 1
-    else: b += 1
-    count += 1
-
-    for i in range(row - 1):
-      if X == count:
-        break
-
-      a -= 1 if isEvenRow else -1
-      b += 1 if isEvenRow else -1
-      count += 1
-    
-    if X == count:
+    # print(f"{max_elements} | {X}")
+    if max_elements >= X: 
+      # OK I can handle now. Stop this.
       break
+    max_elements += adding_elements
+    adding_elements += 1
 
-  print(str(a) + '/' + str(b))
+  a = adding_elements - 1
+  b = 1
 
-for i in range(2, 20):
-  print(f"{i}: ", end="")
-  solution(i)
+  # print(f"{max_elements} | {adding_elements}")
+  # Explain below: Why? adding elements is designed for the future adding. so it will kill one more.
+  last_max_elements = max_elements - adding_elements + 1 
+  last_steps = X - last_max_elements - 1 # first elemet does not change. so -1.
+
+  # Dont touch this
+  a -= last_steps
+  b += last_steps
+
+  # Finally
+  print(f"{a}/{b}")
+
+solution(X)
