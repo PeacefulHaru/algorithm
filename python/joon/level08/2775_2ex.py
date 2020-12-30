@@ -1,4 +1,5 @@
-# e: 70% less Length Code (Efficiency) 
+# e: 70% less Length Code (Efficiency)
+# x: learn about for _ in range 
 # In terms of memory usage and speed, there was not so much difference
 
 import sys
