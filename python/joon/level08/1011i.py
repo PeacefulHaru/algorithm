@@ -1,3 +1,5 @@
+# i: inefficient
+
 import sys
 input = sys.stdin.readline
 
