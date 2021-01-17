@@ -13,11 +13,14 @@ function solution(board, moves) {
   // This loop scans the board and results a top array filled with the position of the first member to be picked
   for (let i in board) {
     for (let j in board[i]) {
-      if (top[j] === 5 && board[i][j] !== 0) {
+      if (top[j] === N && board[i][j] !== 0) {
         top[j] = Number(i)
       }
     }
   }
+
+  // Testing
+  // console.log(top);
 
   // This does not change the board data
   // if top == N, it means it is done picking
@@ -44,14 +47,21 @@ function solution(board, moves) {
       answer += 2;
       top[move - 1] = i + 1; // add unitl it becomes N
     }
-
+    // console.log("top: " + top);
+    // console.log("answer: " + answer);
+    // console.log("picked: " + picked);
   }
 
-  // console.log(answer);
   return answer;
 }
 
-board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]];
-moves = [1,5,3,5,1,2,1,4];
+board = 	[
+  [1, 0, 0, 0, 0], 
+  [1, 0, 0, 0, 5], 
+  [1, 0, 0, 0, 5], 
+  [1, 0, 0, 0, 5], 
+  [1, 1, 0, 0, 5]
+]	;
+moves = [1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2];
 
-solution(board, moves);
+console.log(solution(board, moves));
