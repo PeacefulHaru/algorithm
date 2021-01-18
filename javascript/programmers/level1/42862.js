@@ -7,14 +7,15 @@ function solution(n, lost, reserve) {
     const peekReserve = peek(reserve);
     const peekLost = peek(lost);
 
-    const atLeastReserved = peekReserve - 1;
-    const atMostReserved = peekReserve + 1;
+    lost.sort();
+    reserve.sort();
 
-    if (peekLost > atMostReserved) {
+    // console.log(reserve + " | " + lost);
+    if (peekLost > peekReserve + 1) {
       lost.pop();
       lostPoppedCnt++;
     }
-    else if (peekReserve < atLeastReserved) { // The reserved value is too big
+    else if (peekLost < peekReserve - 1) { // The reserved value is too big
       reserve.pop();
     }
     else {
@@ -28,7 +29,7 @@ function solution(n, lost, reserve) {
 
 
 const n = 5;
-const lost = [2, 4];
-const reserve = [3];
+const lost = [1, 2, 3, 4];
+const reserve = [5];
 
 console.log(solution(n, lost, reserve))
