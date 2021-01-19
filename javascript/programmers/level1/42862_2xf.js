@@ -1,3 +1,7 @@
+//f This is wrong
+//x I have learned that you have to spread the array if you want to copy
+//   The fastest way in JS is to spread (ES6)
+
 const peek = arr => arr[arr.length - 1];
 
 function solution(n, lost, reserve) {
