@@ -3,15 +3,18 @@ const peek = arr => arr[arr.length - 1];
 function solution(n, lost, reserve) {
   let lostPoppedCnt = 0;
 
-  const pastLost = lost;
+  const pastLost = [...lost];
   lost = lost.filter(el => !reserve.includes(el));
   reserve = reserve.filter(el => !pastLost.includes(el));
+
+  lost.sort();
+  reserve.sort();
 
   while (lost.length > 0 && reserve.length > 0) {
     const peekReserve = peek(reserve);
     const peekLost = peek(lost);
 
-    console.log(lost + " | " + reserve);
+    // console.log(lost + " | " + reserve);
     if (peekLost > peekReserve + 1) {
       lost.pop();
       lostPoppedCnt++;
