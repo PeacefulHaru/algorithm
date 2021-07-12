@@ -26,7 +26,7 @@ def prefix_avg(A):
 def solution(A):
     P = prefix_avg(A)
     n = len(A)
-    minimum = P[1] # at least A[0] ~ A[1]
+    minimum = P[1] # at least A[0] ~ A[1] 
     position = 0 
 
     # testing
