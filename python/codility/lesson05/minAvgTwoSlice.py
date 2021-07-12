@@ -29,6 +29,7 @@ def solution(A):
     # testing
     # print(position)
 
+    # This causing O(N * N) -> Too slow
     for i in range(n - 1):
         for j in range(i + 1, n):
             if minimum > get_avg(P, i, j):
